@@ -8,3 +8,10 @@ for (let i = 0; i < 16; ++i) {
 
   container.appendChild(div);
 }
+
+const divs = document.querySelectorAll("#container > div");
+divs.forEach((div) =>
+  div.addEventListener("mouseover", (e) => {
+    e.target.style.cssText = "background-color: black;";
+  })
+);
