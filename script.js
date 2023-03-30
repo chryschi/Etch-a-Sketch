@@ -1,4 +1,5 @@
 const container = document.querySelector("#container");
+const WIDTH = 400;
 
 // const div = document.createElement("div");
 function createGrid(size = 4) {
@@ -8,12 +9,16 @@ function createGrid(size = 4) {
 
     container.appendChild(div);
   }
+  let width = Math.floor(WIDTH / size);
+
   const divs = document.querySelectorAll("#container > div");
-  divs.forEach((div) =>
+  divs.forEach((div) => {
     div.addEventListener("mouseover", (e) => {
-      e.target.style.cssText = "background-color: black;";
-    })
-  );
+      e.target.style.backgroundColor = " black";
+    });
+    div.style.width = `${width}px`;
+    div.style.height = `${width}px `;
+  });
 }
 
 createGrid();
